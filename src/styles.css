@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.oswald-font{
+    font-family: "Oswald", serif;   
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+button:disabled{
+    opacity: 90%;   
+}
+.custom-button{
+    border-radius: 1px !important;
+    color: black !important;
+}
+
+.text-area {
+    overflow-y: auto !important;
+}
+.text-area::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+}
+  
+.text-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.text-area::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+.text-area::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: grabbing;
+}
+  

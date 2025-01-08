@@ -1,0 +1,8 @@
+<div class="card card-container" [class.custom-card-css]="shadow" style="width: {{width}}; height: {{height}};">
+    <h5 class="card-header">
+        <ng-content select="custom-card-title"></ng-content>
+    </h5>
+    <div class="card-body card-text">
+        <ng-content select="custom-card-body"></ng-content>
+    </div>
+</div>

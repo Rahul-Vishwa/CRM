@@ -1,0 +1,24 @@
+<div class="mt-4 ml-10">
+    <crm-custom-card [width]="'350px'" [height]="'600px'" [shadow]="true">
+        <custom-card-title>Customers</custom-card-title>
+        <custom-card-body>
+            @if (customers$ | async; as data) {
+                @for (item of data.customers; track item.id) {
+                    <div class="mb-4">
+                        <crm-custom-card [width]="'100%'" [height]="'130px'">
+                            <custom-card-title>{{item.name}}</custom-card-title>
+                            <custom-card-body>
+                                <div>
+                                    {{item.emailaddress}}
+                                </div>
+                                <div>
+                                    {{item.phonenumber}}
+                                </div>
+                            </custom-card-body>
+                        </crm-custom-card>
+                    </div>
+                }
+            }
+        </custom-card-body>
+    </crm-custom-card>
+</div>

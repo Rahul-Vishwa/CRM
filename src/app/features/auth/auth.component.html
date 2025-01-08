@@ -1,0 +1,65 @@
+<div class="oswald-font flex justify-center mt-24">
+    <div>
+        <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+            <div class="flex-col">
+                @if (authType==="signup") {
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Username</mat-label>
+                            <input 
+                                matInput
+                                [formControl]="authForm.controls.username!"
+                                maxlength="100"
+                                autocomplete="off"
+                            />
+                        </mat-form-field>
+                    </div>
+                }
+                <div>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input 
+                            matInput
+                            [formControl]="authForm.controls.email"
+                            maxlength="255"
+                            autocomplete="off"
+                        />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input 
+                            matInput
+                            [formControl]="authForm.controls.password"
+                            maxlength="100"
+                            autocomplete="off"
+                            [type]="hide() ? 'password' : 'text'" 
+                        />
+                        <button
+                            mat-icon-button
+                            matSuffix
+                            type="button"
+                            (click)="clickEvent($event)"
+                            [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide()"
+                        >
+                            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button 
+                        mat-raised-button 
+                        type="submit"
+                        class="custom-button"
+                        [disabled]="authForm.invalid"
+                    >
+                        {{authTitle()}}
+                    </button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

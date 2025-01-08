@@ -1,0 +1,78 @@
+<div class="mt-4 ml-10">
+    <crm-custom-card [width]="'350px'" [height]="'600px'" [shadow]="true">
+        <custom-card-title>Add Customer</custom-card-title>
+        <custom-card-body>
+            <form [formGroup]="addCustomerForm" (ngSubmit)="addCustomer()">
+                <div>
+                    <mat-form-field class="w-full">
+                        <mat-label>Name</mat-label>
+                        <input 
+                            matInput
+                            formControlName="name"
+                            autocomplete="off"
+                            maxlength="100"
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="mb-3">
+                    <mat-radio-group formControlName="type" aria-label="Select an option" class="flex justify-evenly">
+                        <mat-radio-button value="1">Business</mat-radio-button>
+                        <mat-radio-button value="2">Individual</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="mb-3">
+                    <mat-radio-group formControlName="status" aria-label="Select an option" class="flex justify-evenly">
+                        <mat-radio-button value="1">Active</mat-radio-button>
+                        <mat-radio-button value="2">Inactive</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div>
+                    <mat-form-field class="w-full">
+                        <mat-label>Email Address</mat-label>
+                        <input 
+                            matInput
+                            formControlName="emailAddress"
+                            autocomplete="off"
+                            maxlength="250"
+                        />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="w-full">
+                        <mat-label>Phone Number</mat-label>
+                        <input 
+                            matInput
+                            type="tel"
+                            formControlName="phoneNumber"
+                            maxlength="15"
+                            autocomplete="off"
+                        />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="w-full">
+                        <mat-label>Notes</mat-label>
+                        <textarea
+                            matInput
+                            formControlName="notes"
+                            autocomplete="off"
+                            class="text-area"
+                            rows="4"
+                            maxlength="300"
+                        ></textarea>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button 
+                        mat-raised-button 
+                        type="submit"
+                        class="custom-button"
+                        [disabled]="addCustomerForm.invalid"
+                    >
+                        Add
+                    </button>
+                </div>
+            </form>
+        </custom-card-body>
+    </crm-custom-card>
+</div>

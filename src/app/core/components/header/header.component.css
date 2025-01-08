@@ -1,0 +1,13 @@
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+}
+.custom-button {
+    border-radius: 1.5px !important;
+}
+.header-shadow{
+    box-shadow: 0px 2px 10px black;
+}
+.header-container{
+    z-index: 1000;
+}
